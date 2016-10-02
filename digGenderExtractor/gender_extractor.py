@@ -2,7 +2,7 @@
 # @Author: ZwEin
 # @Date:   2016-06-21 12:36:47
 # @Last Modified by:   ZwEin
-# @Last Modified time: 2016-10-02 15:02:25
+# @Last Modified time: 2016-10-02 15:41:27
 
 import copy 
 import types
@@ -17,6 +17,7 @@ class GenderExtractor(Extractor):
     def extract(self, doc):
         if 'text' in doc: 
             return DIGGE.extract(doc['text'])
+        return None
         
     def get_metadata(self):
         return copy.copy(self.metadata)
