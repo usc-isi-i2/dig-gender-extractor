@@ -2,7 +2,7 @@
 # @Author: ZwEin
 # @Date:   2016-06-21 12:36:47
 # @Last Modified by:   ZwEin
-# @Last Modified time: 2016-10-01 15:15:47
+# @Last Modified time: 2016-10-02 15:02:25
 
 import copy 
 import types
@@ -12,10 +12,11 @@ from digGenderExtractor.digge import DIGGE
 class GenderExtractor(Extractor):
 
     def __init__(self):
-        self.renamed_input_fields = ['text']  # ? renamed_input_fields
+        self.renamed_input_fields = ['text']
 
     def extract(self, doc):
-        return DIGGE.extract(doc['text'])
+        if 'text' in doc: 
+            return DIGGE.extract(doc['text'])
         
     def get_metadata(self):
         return copy.copy(self.metadata)
@@ -26,10 +27,3 @@ class GenderExtractor(Extractor):
 
     def get_renamed_input_fields(self):
         return self.renamed_input_fields
-
-    def set_renamed_input_fields(self, renamed_input_fields):
-        if not (isinstance(renamed_input_fields, basestring) or isinstance(renamed_input_fields, types.ListType)):
-            raise ValueError("renamed_input_fields must be a string or a list")
-        self.renamed_input_fields = renamed_input_fields
-        return self 
-

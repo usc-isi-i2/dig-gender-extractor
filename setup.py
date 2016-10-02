@@ -2,7 +2,7 @@
 # @Author: ZwEin
 # @Date:   2016-09-30 14:01:47
 # @Last Modified by:   ZwEin
-# @Last Modified time: 2016-10-01 15:18:14
+# @Last Modified time: 2016-10-02 14:59:12
 
 
 from distutils.core import setup
@@ -15,9 +15,9 @@ setup(
     description = 'digGenderExtractor',
     author = 'Lingzhe Teng',
     author_email = 'zwein27@gmail.com',
-    url = 'https://github.com/ZwEin27/dig-gender-extractor',
-    download_url = 'https://github.com/ZwEin27/dig-gender-extractor',
+    url = 'https://github.com/usc-isi-i2/dig-gender-extractor',
+    download_url = 'https://github.com/usc-isi-i2/dig-gender-extractor',
     packages = find_packages(),
     keywords = ['gender', 'extractor'],
-    install_requires=['digSparkUtil', 'digExtractor']
+    install_requires=['digExtractor']
     )
